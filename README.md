@@ -36,7 +36,7 @@ OBSでYouTube/Twitch配信をミラーするためのコントローラー。
 | VIEW_COUNT | ミラーの最大表示数 | 表示数を多くしてもウインドウが縦長になるだけで、スライダーは追加されない |
 
 #### OBS
-設定を変更した場合は、OBSの再起動、または`obs_controller.lua`を再読み込みする。
+設定を変更した場合は、OBSを再起動、または`obs_controller.lua`を再読み込みする。
 | 設定 | 説明 | 備考 |
 |----|----|----|
 | NORMAL_BROWSER_FMT | 通常のブラウザーソースフォーマット | 通常のシーンに追加する。<br>フォーマットの末尾に` N`が付く。<br>例：`Normal_Player 1`, `Normal_Player 2` |
