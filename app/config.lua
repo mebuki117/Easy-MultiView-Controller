@@ -78,4 +78,4 @@ FOCUS_SCENE =
     cfg.OBS and cfg.OBS.FOCUS_SCENE or "Focus"
 
 AUTONAME =
-    cfg.OBS and cfg.OBS.AUTONAME == "true" or false
+    cfg.OBS and cfg.OBS.AUTONAME == "true"
