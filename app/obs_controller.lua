@@ -1,6 +1,6 @@
 obs = obslua
 
-version = "0.2.0"
+version = "0.3.0"
 
 ---  config ---
 dofile(script_path() .. "config.lua")
@@ -74,7 +74,7 @@ function parse_link(url)
     local tw = string.match(url, "twitch%.tv/([%w_-]+)")
     if tw then return "tw", tw end
 
-    return nil, nil
+    return "url", url
 end
 
 function norm_key(url)
@@ -157,12 +157,17 @@ function set_browser(src, link, index)
         obs.obs_data_set_bool(s, "is_local_file", true)
         obs.obs_data_set_string(s, "local_file", generate_html(val, index))
         obs.obs_data_set_string(s, "url", "")
-    else
+
+    elseif kind == "tw" then
         obs.obs_data_set_bool(s, "is_local_file", false)
         obs.obs_data_set_string(
             s, "url",
             "https://player.twitch.tv/?channel=" .. val .. "&parent=twitch.tv"
         )
+
+    elseif kind == "url" then
+        obs.obs_data_set_bool(s, "is_local_file", false)
+        obs.obs_data_set_string(s, "url", val)
     end
 
     obs.obs_source_update(src, s)

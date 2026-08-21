@@ -4,7 +4,7 @@ import os
 
 from config import VIEW_COUNT
 
-version = '0.2.0'
+version = '0.3.0'
 
 # === Paths ===
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
